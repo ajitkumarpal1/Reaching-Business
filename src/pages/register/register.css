@@ -1,0 +1,188 @@
+.rb__register {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.rb__register-image {
+    width: 1000px;
+    height: 700px;
+
+}
+
+.rb__register-image img {
+    width: fit-content;
+    height: 1000px;
+    object-fit: contain;
+}
+
+.rb__register-form_container {
+    position: relative;
+    margin-top: 250px;
+    margin-left: 200px;
+    width: 500px;
+    background: var(--color-box);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 10px 5px black;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.rb__register-form_container h1 {
+    margin: 10px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.rb__register-form_container input {
+    font-size: 20px;
+    width: 400px;
+    margin: 10px;
+    padding: 17px 0 21px 45px;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+}
+
+.rb__register-form_container-icon1,
+.rb__register-form_container-icon2,
+.rb__register-form_container-icon3,
+.rb__register-form_container-icon4 {
+    z-index: 1;
+    position: absolute;
+    left:1.3em;
+    opacity: 50%;
+}
+
+
+.rb__register-form_container-icon1 {
+    top: 6.5em;
+}
+
+.rb__register-form_container-icon2 {
+    top: 11.1em;
+}
+
+.rb__register-form_container-icon3 {
+    top: 15.7em;
+}
+
+.rb__register-form_container-icon4 {
+    top: 20.3em;
+}
+
+.rb__register-form_container-button button {
+    margin: 10px 5px 13px 5px;
+    display: flex;
+    justify-content: center;
+    padding: 14px 40px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+}
+
+@media screen and (max-width: 1050px) {
+    .rb__register-image {
+        display: none;
+    }
+
+    .rb__register-form_container-icon1,
+    .rb__register-form_container-icon2,
+    .rb__register-form_container-icon3,
+    .rb__register-form_container-icon4 {
+        z-index: 1;
+        position: absolute;
+        left: 4.1em;
+        opacity: 50%;
+    }
+    .rb__register-form_container-icon1 {
+        top: 6.5em;
+    }
+    
+    .rb__register-form_container-icon2 {
+        top: 11.1em;
+    }
+    
+    .rb__register-form_container-icon3 {
+        top: 15.7em;
+    }
+    
+    .rb__register-form_container-icon4 {
+        top: 20.3em;
+    }
+}
+@media screen and (max-width: 700px) {
+    .rb__register-image {
+        display: none;
+    }
+    .rb__register-form_container {
+        margin-left: 70px;
+    }
+    .rb__register-form_container-icon1,
+    .rb__register-form_container-icon2,
+    .rb__register-form_container-icon3,
+    .rb__register-form_container-icon4 {
+        z-index: 1;
+        position: absolute;
+        left: 4.1em;
+        opacity: 50%;
+    }
+    .rb__register-form_container-icon1 {
+        top: 6.5em;
+    }
+    
+    .rb__register-form_container-icon2 {
+        top: 11.1em;
+    }
+    
+    .rb__register-form_container-icon3 {
+        top: 15.7em;
+    }
+    
+    .rb__register-form_container-icon4 {
+        top: 20.3em;
+    }
+}
+@media screen and (max-width: 550px) {
+    .rb__register-image {
+        display: none;
+    }
+    .rb__register-form_container {
+        margin-left: 2px;
+        width: 400px;
+    }
+    .rb__register-form_container-icon1,
+    .rb__register-form_container-icon2,
+    .rb__register-form_container-icon3,
+    .rb__register-form_container-icon4 {
+        z-index: 1;
+        position: absolute;
+        left: 2.5em;
+        opacity: 50%;
+    }
+    .rb__register-form_container-icon1 {
+        top: 6.5em;
+    }
+    
+    .rb__register-form_container-icon2 {
+        top: 11.1em;
+    }
+    
+    .rb__register-form_container-icon3 {
+        top: 15.7em;
+    }
+    
+    .rb__register-form_container-icon4 {
+        top: 20.3em;
+    }
+}

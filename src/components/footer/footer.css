@@ -1,0 +1,10 @@
+.rb__footer{
+    margin-top: 2rem;
+    display: grid;
+    place-content: center;
+    background-color: var(--color-footer);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    height: 7vh;
+}

@@ -1,0 +1,351 @@
+.rb__showproduct{
+    display: grid;
+    grid-template-columns: auto;
+}
+.rb__showproduct-card {
+    display: flex;
+    margin: 0 auto;
+    width: 70vw;
+}
+
+.rb__showproduct-popup{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: end;
+    align-items: center;
+    background: var(--color-box);
+    padding: 2rem 1rem;
+    position:absolute;
+    top: 10rem;
+    left: 35rem;
+    margin-top: 1rem;
+    width: 35em;
+    height: 30em;
+    min-width: 50px;
+    border-radius: 1px; 
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    overflow-y: scroll;
+    
+}
+
+.rb__showproduct-popup img{
+    width: 15vw;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.rb__showproduct-card img{
+    width: 15vw;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 3px;
+    cursor: pointer;
+}   
+.rb__showproduct-card .btn {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: white;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.rb__showproduct-card_content{
+    margin: auto 30px;
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 2em;
+    font-family: var(--font-family);
+}
+.rb__showproduct-card_content h3{
+    font-size: 28px;
+}
+.rb__showproduct-card_content button{
+    width: fit-content;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__showproduct-card_content-rating{
+    display: flex;
+}
+
+.rb__showproduct-card_content-rating {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+
+.rb__showproduct-comment{
+     margin: 20px auto;
+     font-family: var(--font-family);
+    width: 60vw;
+}
+.rb__showproduct-comment h3{
+    font-size: 30px;
+    margin-bottom: 20pc;
+}
+.rb__showproduct-comment_container{
+    padding: 10px 20px;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.rb__showproduct-comment_container img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100px;
+        margin-right: 10px;
+}
+.rb__showproduct-comment_box{
+    display: flex;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-family);
+    align-items: center;
+}
+.rb__showproduct-comment_box img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+.rb__showproduct-comment_box input{
+    width: 400px;
+    margin: 12px;
+    padding: 17px 0 21px 45px;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+}
+.rb__showproduct-comment_box button{
+    margin: 15px 5px 13px 5px;
+    padding: 14px 40px;
+    font-family: var(--font-family);
+   
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+
+
+
+
+.rate {
+    float: right;
+    height: 60px;
+    padding: 0 auto;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:left;
+    width:1.5em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:60px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ccc;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #18003C;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #18003C;
+}
+
+@media screen and (max-width: 1050px) {
+    .rb__showproduct{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .rb__showproduct-popup{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: end;
+        align-items: center;
+        background: var(--color-box);
+        padding: 2rem 1rem;
+        position:absolute;
+        top: 10rem;
+        left: 15rem;
+        margin-top: 1rem;
+        width: 35em;
+        height: 30em;
+        min-width: 50px;
+        border-radius: 1px; 
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        overflow-y: scroll;
+        
+    }
+
+    .rb__showproduct-card .btn {
+        top: 30%;
+        left: 44%;
+    }
+    .rb__showproduct-card {
+        display: flex;
+    }
+    .rb__showproduct-card img{
+        width: 30vw;
+        height: 35vh;
+        object-fit: cover;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .rb__showproduct-card_content{
+        margin: auto 20px;
+        display: grid;
+        grid-template-rows: min-content;
+        gap: 2em;
+        font-family: var(--font-family);
+    }
+    .rb__showproduct-card_content h3{
+        font-size: 28px;
+    }
+    .rb__showproduct-card_content-rating{
+        display: flex;
+    }
+    
+    .rb__showproduct-card_content-rating {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    
+    
+    .rb__showproduct-comment{
+         margin: 20px auto;
+         font-family: var(--font-family);
+        width: 70vw;
+    }
+    .rb__showproduct-comment h3{
+        font-size: 30px;
+    }
+    .rb__showproduct-comment_container{
+        width: 70vw;
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .rb__showproduct-comment_container img{
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 100px;
+            margin-right: 10px;
+    }
+    .rb__showproduct-comment_box{
+        display: flex;
+        background: var(--color-box);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        flex-direction: row;
+        font-family: var(--font-family);
+        align-items: center;
+    }
+    .rb__showproduct-comment_box img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100px;
+        margin-right: 10px;
+    }
+    .rb__showproduct-comment_box input{
+        width: 400px;
+        margin: 12px;
+        padding: 17px 0 21px 45px;
+        border-radius: 25px;
+        border-style: none;
+        box-shadow: 2px 2px 5px #9B9B9B;
+    }
+    .rb__showproduct-comment_box button{
+        margin: 15px 5px 13px 5px;
+        padding: 14px 40px;
+        font-family: var(--font-family);
+        font-weight: 600px;
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 25px;
+        border-style: none;
+        color: white;
+        background-color: #FF5480;
+        cursor: pointer;
+    }
+}
+@media screen and (min-width: 50em) {
+    .rb__showproduct-comment_box{
+        padding: 32px;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .rb__showproduct-card {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .rb__showproduct-card .btn {
+        top: 25%;
+        left: 84%;
+    }
+    .rb__showproduct-card img{
+        width: 100%;
+    }
+    .rb__showproduct-card_content{
+        margin: 10px 10px 0 0;
+        gap: 1em;
+    }
+    .rb__showproduct-comment_box{
+        flex-direction: column;
+        margin-top: 30px;
+        padding: 32px;
+    }
+    .rb__showproduct-comment_box input{
+        margin-top: 50px;
+        width: 65vw;
+    }
+
+}

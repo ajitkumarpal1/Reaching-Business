@@ -1,0 +1,292 @@
+.rb__product{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 0 0 1rem;
+    padding-top: 1px;
+    font-family: var(--font-family);
+    /* border: 1px solid #DE3C4B; */
+}
+
+.rb__product-heading{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.rb__product-heading h2{
+    font-weight: 600;
+    font-size: 44px;
+    margin:0 0 0 23px
+}
+
+.rb__product-container{
+    display: flex;
+    align-items: baseline;
+    flex-direction: row-reverse;
+}
+.rb__product-desc{
+    height: 600px;
+    width: 700px;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 0 0 5px;
+    padding: 30px 45px;
+    font-family: var(--font-family);
+    margin: 0 auto 20px auto;
+}
+.rb__product-desc input{
+    width: 30vw;
+    margin: 12px;
+    padding: 17px 0 21px 45px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+    color: black;
+    font-size: 25px;
+}
+.rb__product-desc h4{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 100%;
+
+}
+.rb__product-desc_details textarea{
+    width: 30vw;
+    margin: 12px;
+    padding: 17px 0 21px 45px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+   
+    font-size: 25px;
+    resize: none;
+}
+.rb__product-desc_pricing input{
+    width: 10vw;
+    padding: 17px 20px 21px 20px;
+}
+::placeholder { 
+    color: #9B9B9B;
+    opacity: 1; 
+    font-size: 20px;
+}
+
+.rb__product-photos{
+    height: fit-content;
+    width: 600px;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 0 0 5px;
+    padding: 30px 45px;
+    font-family: var(--font-family);
+    margin: 20px auto;
+}
+.rb__product-photos h4{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 10px;
+}
+.rb__product-photos_other{
+    margin-top: 50px;
+}
+
+.rb__product-photos input::-webkit-file-upload-button{
+   
+    padding: 14px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__product-photos input{
+    margin: 15px 5px 13px 5px;
+    padding: 0;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #DE3C4B;
+
+}
+#submit {
+    margin: 15px 5px 13px 5px;
+    padding: 14px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__product-upload{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.rb__product-upload button{
+    margin: 0 0 0 30px;
+    width: 100px;
+    height: 50px;
+    background-color: #9283E0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 0 0 0 10px;
+    padding: 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 25px;
+    font-weight: 400;
+}
+@media screen and (max-width: 1050px) {
+    .rb__product{
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        margin: 0 0 0 2rem;
+        padding-top: 34px;
+        font-family: var(--font-family);
+        border: 1px solid #DE3C4B;
+    }
+    .rb__product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .rb__product-desc input{
+        width: 60vw;
+    }
+    .rb__product-desc_details textarea{
+        width: 60vw;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .rb__product{
+        height: 100%;
+        width: 80vw;
+        margin: 0 0 0 1rem;
+
+    }
+    .rb__product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .rb__product-desc{
+        height: 600px;
+        width: 560px;
+    }
+    .rb__product-photos{
+        height: 600px;
+        width: 560px;
+    }
+    .rb__product-desc_pricing input{
+        width: 15vw;
+        padding: 17px 20px 21px 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .rb__product{
+        height: 100%;
+        width: 80vw;
+        margin: 0 0 0 0;
+
+    }
+    .rb__product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .rb__product-desc{
+        height: 600px;
+        width: 540px;
+    }
+    .rb__product-photos{
+        height: 600px;
+        width: 540px;
+    }
+    .rb__product-desc_pricing input{
+        width: 15vw;
+        padding: 17px 20px 21px 20px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .rb__product{
+        height: 100%;
+        width: 80vw;
+    }
+    .rb__product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .rb__product-desc{
+        height: 600px;
+        width: 400px;
+        padding-left: 2rem;
+    }
+    .rb__product-photos{
+        height: 600px;
+        width: 400px;
+        padding-left: 2rem;
+
+    }
+    .rb__product-desc_pricing input{
+        width: 15vw;
+        padding: 17px 20px 21px 20px;
+    }
+}
+@media screen and (max-width: 480px){
+    .rb__product{
+        height: 100%;
+        width: 90vw;
+        margin: 0 0 0 1.5rem;
+    }
+    .rb__product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .rb__product-desc{
+        height: 600px;
+        width: 320px;
+        padding-left: 2rem;
+    }
+    .rb__product-photos{
+        width: 320px;
+
+    }
+    .rb__product-desc_pricing input{
+        width: 20vw;
+        padding: 17px 20px 21px 20px;
+    }
+    .rb__product-desc_pricing input::placeholder{
+        color: #9B9B9B;
+        opacity: 1; 
+        font-size: 15px;
+    }
+    .rb__product-photos input{
+        width: 30vh;
+    }
+}

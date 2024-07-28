@@ -1,0 +1,98 @@
+.rb__search{
+    width: 90vw;
+    max-width: 86vw;
+    margin: 0 auto;
+    display: flex;  
+    flex-direction: column;
+    background: #f7f0f0;
+    padding: 10px;
+}
+.rb__search input{      
+    width: 70%;
+    margin-bottom: 20px;
+    height: 6vh;
+    padding: 3px 20px;
+    font-size: var(--font-family);
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.rb__search button{
+    margin: 15px 5px 13px 5px;
+    padding: 7px 25px;
+    font-family: var(--font-family);
+   
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  .dropdown-content button{
+    margin: 2px 1px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+    text-transform: capitalize;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.rb__search-list{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-family);
+}
+.rb__search-list h2{
+    font-weight: 400;
+    font-size: 18px;
+    text-align: justify;
+}
+.rb__search-list img{
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    object-fit: cover;
+    object-fit: contain;
+}
+.rb_search-list_childs{
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--color-box);
+    margin-bottom: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.rb_search-list_childs h2{
+    flex: 1 1 50%;
+   
+    margin-bottom: 10px;
+}

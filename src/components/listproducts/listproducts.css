@@ -1,0 +1,20 @@
+.rb__listproducts{
+    
+    display: grid;
+    margin: auto auto;
+    grid-template-columns: 33% 33%;
+}
+
+
+.rb__listproducts-products_cards img{
+    min-width: 12rem;
+    width: 20rem;
+    height: 15rem;
+    min-height: 7rem;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.rb__listproducts-products_cards img:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

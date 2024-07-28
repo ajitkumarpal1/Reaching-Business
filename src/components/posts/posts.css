@@ -1,0 +1,222 @@
+.rb__posts {
+    height: 32vh;
+    width: 65vw;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    background-color: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px ;
+    cursor: pointer;
+}
+
+.rb__posts:hover {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.rb__posts-container_content {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 4px 87px 30px;
+    font-family: var(--font-family);
+}
+
+.rb__posts-container_content-author {
+    display: flex;
+    align-items: baseline;
+    padding: 0 5px;
+}
+
+.rb__posts-container_content-author p {
+    color: #9B9B9B;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.rb__posts-container_content-author h5 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.rb__posts-container_content-title h2 {
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.rb__posts-container_content-content p {
+    color: #9B9B9B;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+    overflow: hidden;
+    /* render less no of lines using css */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+.rb__posts-container_content-content a {
+    text-decoration: underline;
+    color: black;
+}
+
+.rb__posts-image img {
+
+    object-fit: cover;
+    height: 32vh;
+    width: 30vw;
+}
+
+@media screen and (max-width: 900px) {
+
+    .rb__posts-container_content {
+        padding: 25px 4px 87px 30px;
+    }
+
+    .rb__posts-container_content-author p {
+        color: #9B9B9B;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .rb__posts-container_content-author h5 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .rb__posts-container_content-title h2 {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .rb__posts-container_content-content p {
+        color: #9B9B9B;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: left;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .rb__posts-container_content {
+        padding: 25px 4px 87px 30px;
+    }
+
+    .rb__posts-container_content-author p {
+        color: #9B9B9B;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .rb__posts-container_content-author h5 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .rb__posts-container_content-title h2 {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .rb__posts-container_content-content p {
+        color: #9B9B9B;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: left;
+    }
+
+}
+@media screen and (max-width: 550px){
+    .rb__posts-container_content {
+        padding: 16px 4px 87px 30px;
+    }
+
+    .rb__posts-container_content-author p {
+        color: #9B9B9B;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .rb__posts-container_content-author h5 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .rb__posts-container_content-title h2 {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .rb__posts-container_content-content p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #9B9B9B;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: left;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .rb__posts{
+        height: 20vh;
+        width: 95vw;
+    }
+  
+    .rb__posts-container_content {
+        width: 53vw;
+        padding: 8px 2px 87px 10px;
+    }
+
+    .rb__posts-container_content-author p {
+        display: none;
+    }
+
+    .rb__posts-container_content-author h5 {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    .rb__posts-container_content-title{
+        width: 50vw;
+    }
+    .rb__posts-container_content-title h2 {
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .rb__posts-container_content-content p {
+        display: none;
+    }
+    .rb__posts-image {
+        display: flex;
+        align-items: center;
+    }
+    .rb__posts-image img {
+        border-radius: 5px;
+        object-fit: cover;
+        height: 20vh;
+        width: 40vw;
+    }
+}

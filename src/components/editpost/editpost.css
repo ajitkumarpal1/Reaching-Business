@@ -1,0 +1,68 @@
+.rb__post {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 500;
+
+}
+
+.rb__post-desc {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rb__post-desc input,
+textarea {
+    width: 90%;
+    margin: 5px;
+    padding: 17px 0 21px 45px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+    font-size: 25px;
+    resize: none;
+}
+
+.rb__post-desc textarea {
+    height: 30vh;
+}
+
+.rb__post-photo {
+    height: min(100%, 1200px);
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px dotted;
+}
+
+.rb__post-photo img {
+    max-width: 100%;
+    max-height: inherit;
+    object-fit: contain;
+}
+.rb__post-desc button{
+    margin: 5px 0 0 30px;
+    width: 100px;
+    height: 50px;
+    background-color: #9283E0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 0 0 0 10px;
+    padding: 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 25px;
+    font-weight: 400;
+}

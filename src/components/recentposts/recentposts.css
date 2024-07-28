@@ -1,0 +1,109 @@
+.rb__recentpost {
+    height: 700px;
+    width: 400px;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 0 0 5px;
+    padding-top: 34px;
+    font-family: var(--font-family);
+}
+
+.rb__recentpost h2 {
+    font-weight: 600;
+    padding: 0 8pc;
+}
+
+.rb__recentpost-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5pc;
+    padding-right: 0.5pc;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.rb__recentpost-list_post {
+    margin-top: 25px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.rb__recentpost-list_post-child{ 
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+.rb__recentpost-list_post-child:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.rb__recentpost-list_post h4 {
+    display: flex;
+    color: #9B9B9B;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.rb__recentpost-list_post h4 {
+    display: flex;
+    color: #9B9B9B;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.rb__recentpost-list_post h3 {
+    /* white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis; */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+}
+@media screen and (max-width: 1380px){
+    .rb__recentpost {
+        width: 300px;
+    }
+    
+    .rb__recentpost h2 {
+        font-weight: 600;
+        padding: 0 5pc;
+    }
+    
+    .rb__recentpost-list_post h4 {
+        font-size: 14px;
+    }
+    
+  
+}
+@media screen and (max-width: 1280px){
+    .rb__recentpost {
+        width: 280px;
+    }
+    
+    .rb__recentpost h2 {
+        font-weight: 600;
+        padding: 0 4pc;
+    }
+    
+    .rb__recentpost-list_post h4 {
+        font-size: 14px;
+    }
+    .rb__recentpost-list_post h3 {
+        /* white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis; */
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    
+  
+}
+

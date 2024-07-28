@@ -1,0 +1,44 @@
+.Main-Layout{
+    min-height: 100vh;
+    min-height: 100dvh;
+    
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.rb__content{
+   display: grid;
+ 
+  
+}
+.rb__Homepage-content{
+    display: grid;
+    place-content: center;
+    grid-auto-flow: column;
+}
+.rb__products{
+    
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+    gap: 2.5rem;
+}
+
+
+@media screen and (max-width: 500px) {
+    .rb__products{
+        grid-column: span 2;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+}
+@media screen and (max-width: 1020px) {
+    .rb__Homepage-content{
+        display: grid;
+        place-content: center;
+        grid-auto-flow: row;
+    }
+    
+}

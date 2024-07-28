@@ -1,0 +1,255 @@
+.rb__updateprofile{
+    height: 100%;
+    width: 90vw;
+    padding: 1rem;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    font-family: var(--font-family);
+    border-radius: 10px;
+    margin: 0 auto;
+    
+}
+.rb__updateprofile-bio{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+.rb__updateprofile-bio img{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.rb__updateprofile-bio_container{
+    margin-left: 40px;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 40px;
+}
+.rb__updateprofile-bio_container h4{
+    font-size: 21px;
+    font-weight: 400;
+    color: #9B9B9B;
+    margin-top: 10px;
+}
+
+.rb__updateprofile-bio_container input::-webkit-file-upload-button{
+   
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__updateprofile-bio_container input{
+
+    margin: 15px 5px 13px 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #DE3C4B;
+}
+.rb__updateprofile-container{
+    padding: 2rem;
+    justify-content: center;
+}
+.rb__updateprofile-container h4{
+    font-size: 25px;
+    font-weight: 400;
+}
+.rb__updateprofile-container input{
+    margin-left: 10px;
+    width: 70vw;
+    height: 6vh;
+    margin: 12px;
+    padding: 17px 0 21px 30px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+    color: black;
+    font-size: 25px;
+}
+.rb__updateprofile button{
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__updateprofile-container_buttons{
+    display: flex;
+}
+
+
+.rb__updateprofile-container button{
+
+    width:max-content;
+    margin: 0 auto;
+    padding: 12px 10px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #af82f7;
+    cursor: pointer;
+}
+.rb__updateprofile-container button:focus{
+    background-color: #6a5d7b;
+
+}
+
+
+@media screen and (max-width: 750px){
+    .rb__updateprofile{
+        width: 85vw;
+    }
+    .rb__updateprofile-bio{
+        display: flex;
+        align-items: flex-start;
+    }
+    .rb__updateprofile-bio img{
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    .rb__updateprofile-bio_container{
+        padding-top: 20px;
+        padding-left: 20px;
+        font-size: 26px;
+    }
+    .rb__updateprofile-bio_container h4{
+        font-size: 21px;
+        font-weight: 400;
+        color: #9B9B9B;
+        margin-top: 10px;
+    }
+    
+    .rb__updateprofile-container{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .rb__updateprofile-container h4{
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .rb__updateprofile-container input{
+        margin-left: 10px;
+        width: 70vw;
+        height: 6vh;
+        margin: 12px;
+        padding: 17px 0 21px 30px;
+        border-radius: 10px;
+        border-style: none;
+        box-shadow: 2px 2px 5px #9B9B9B;
+        color: black;
+        font-size: 25px;
+    }
+    .rb__updateprofile button{
+        width: 200px;
+        margin: 0 auto;
+        padding: 12px;
+        font-family: var(--font-family);
+        font-weight: 600px;
+        font-weight: 400;
+        font-size: 18px;
+        border-radius: 25px;
+        border-style: none;
+        color: white;
+        background-color: #FF5480;
+        cursor: pointer;
+    }
+}
+
+
+
+
+@media screen and (max-width: 750px){
+    .rb__updateprofile{
+        width: 82vw;
+        padding-left: 1rem;
+    }
+    .rb__updateprofile-bio img{
+        width: 250px;
+        height: 200px;
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .rb__updateprofile{
+        width: 76vw;
+        padding: 1rem 2rem;
+    }
+    .rb__updateprofile-bio img{
+        width: 200px;
+        height: 150px;
+        margin: auto 0;
+    }
+    
+    .rb__updateprofile-bio_container input{
+        width: 25vh;
+        margin-left: 0;
+    }
+    .rb__updateprofile-container h4{
+        font-size: 22px;
+        font-weight: 400;
+    }
+    .rb__updateprofile-container input{
+        margin-left: 6px;
+        width: 55vw;
+     
+    }
+    .rb__updateprofile-bio_container{
+       
+        font-size: 24px;
+    }
+    .rb__updateprofile-bio_container h4{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 450px){
+    .rb__updateprofile{
+        width: 95vw;
+        padding: 1rem 0.5rem;
+    }
+    
+    .rb__updateprofile-bio_container input{
+        width: 28vh;
+        margin-left: 0;
+    }
+
+    .rb__updateprofile-container input{
+        margin-left: 6px;
+        width: 76vw;
+     
+    }
+}

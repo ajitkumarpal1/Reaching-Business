@@ -1,0 +1,700 @@
+import React from "react";
+import "./chat.css";
+import { IoMdSend } from "react-icons/io";
+import { useState, useEffect, useRef } from "react";
+import { useUserAuth } from "../../context/UserAuthContext";
+import ChatService from "../../services/chat.service";
+import dummy from "../../assets/blank-profile-picture-g0e62e6b69_1280.png"
+import {
+  query,
+  collection,
+  orderBy,
+  onSnapshot,
+  limit,
+  serverTimestamp,
+} from "firebase/firestore";
+import {db} from "../../firebaseConfig"
+
+
+const Chat = () => {
+  const { user } = useUserAuth();
+  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
+  const scroll = useRef();
+
+  useEffect(() => {
+    const q = query(
+      collection(db, "messages"),
+      orderBy("message.createdAt"),
+      limit(50)
+    );
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+      let messages = [];
+      QuerySnapshot.forEach((doc) => {
+        messages.push({ ...doc.data(), id: doc.id });
+      });
+      setMessages(messages)
+    })
+    console.log(messages)
+    return () => unsubscribe;
+     
+  },[]);
+
+  const sendMessage = async (event) => {
+    event.preventDefault();
+    if (message.trim() === "") {
+      alert("Enter valid message");
+      return;
+    }
+    const { email, displayName, photoURL } = user;
+    try {
+      const response = await ChatService.addMessage({
+        text: message,
+        name: displayName,
+        avatar: photoURL,
+        createdAt: serverTimestamp(),
+        email,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+    setMessage("");
+    scroll.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="rb__chat">
+      <div className="rb__chat-section">
+        {/* <div className="rb__chat-header">
+            <IoMdAddCircle size={55} cursor='pointer' onClick={() => setShowfollowers(prevstate => !prevstate)}/>
+            {showfollowers && <> 
+                <div className='rb__chat-header-group-1'>
+
+                </div>
+            </>}
+            <div className='display'>
+            <IoMdArrowDropdown  size={55} cursor='pointer' onClick={() => setShow(prevstate => !prevstate)}/>
+            {show && <> 
+                <div className='rb__chat-header-group-2'>
+
+                </div>
+            </>}
+            </div>
+            </div> */}
+        <div className="rb__chat-body">
+          <div className="rb_chat-body_content">
+         
+          {messages?.map((message) => (
+              <Message key={message.id} data={message} />
+           ))}
+          </div>
+     
+          <form
+            onSubmit={(event) => sendMessage(event)}
+            className="rb_chat-body_input-box"
+          >
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Type here"
+            />
+            <IoMdSend type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Chat;
+
+
+export const Message =({data}) =>{
+  const {user} = useUserAuth();
+  return(
+    <div className="chat-box_content">
+       
+    <div className={`rb_chat-body_content-chatboxes ${data.message.email === user.email ? "right" : ""}`}>
+      <img src={dummy} alt=""/>
+      <div>
+      {data.message.email === user.email ? "" : <p>{data.message.name}</p>}
+        
+        {data.message.text}
+      </div>
+    
+    </div>
+    </div>
+  )
+}
+
+
+
+.rb__chat{
+    padding: 0 80px;
+    border-radius:10px;
+    max-height: 90vh;
+}
+
+.rb__chat-section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 5px auto;
+    border: 5px solid #FFFFFF;
+    height: 35em;
+}
+
+.rb__chat-header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 7px;
+    width: 50px;
+    height: 40px;
+    /* border: 2px solid yellow; */
+    flex: 1 1 30%;
+    min-width: 30ch;
+    min-height: 10ch;
+    background: var(--color-box);
+}
+.rb__chat-header-group-1{
+    margin-top: 50px;
+    margin-left: 40px ;
+    position: absolute;
+    padding: 30px;
+    left: 0;
+    width: 90%;
+    height: 20rem;
+    background: var(--color-box);
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    overflow: scroll;
+}
+.rb__chat-header-group-1_child{
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: 20px;
+    gap: 2rem;
+    border-bottom: 2px solid hotpink;
+   
+}
+.rb__chat-header-group-1_child img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-right: 10px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+}
+.rb__chat-header-group-1_child h3{
+    margin-right: 10px;
+}
+.rb__chat-header-group-1 button{
+    width: fit-content;
+    margin: 3px 1px 0 4px;
+    border: none;
+    color: white;
+    background-color: #9283E0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.rb__chat-header-group-1 input{
+    width: 50%;
+    margin-bottom: 20px;
+    height: 9vh;
+    padding: 3px 20px;
+    font-size: var(--font-family);
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.rb__chat-header-group-2{
+    margin-top: 40px;
+    margin-right: 40px ;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: 100px;
+    background: var(--color-box);
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.rb__chat-body{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 50px;
+    height: 89ch;
+    min-height: 85ch;
+    padding: 10px 10px;
+    /* border: 2px solid black; */
+    flex: 1 1 70%;
+    background: #fff1f1;
+    border-radius: 10px;
+}
+
+.rb_chat-body_content{
+    flex: 1 1 100%;
+    height: 30em;
+    padding: 0 10px;
+}
+.rb_chat-body_content-chatboxes{
+    width: fit-content;
+    
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    margin: 8px;
+    background: var(--color-box);
+    min-height: 10% fit-content;
+    border-radius: 28px;
+}
+.rb_chat-body_content-chatboxes p{
+    font-size: 14px;
+   
+    color: var(--color-subtext);
+}
+.chat-box_content{
+    display: flex;
+    align-items: center;
+}
+.chat-box_content img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-right: 4px;
+}
+.right{
+    margin-bottom: 10px;
+    position: absolute;
+    right: 570px;
+    top: 690px;
+}
+
+.rb_chat-body_input-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    margin: 8px;
+    gap: 1;
+    background: var(--color-box);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 10%;
+    border-radius: 30px;
+}
+.rb_chat-body_input-box > *:nth-child(2){
+    background: #FF5480;
+    flex: 1 1 10%;
+    padding: 50px;
+    height: 100%;
+    padding:  0 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+}
+.rb__chat-body input{
+    padding: 0 0 0 30px;
+    flex: 1 1 80%;
+    height: 100%;
+    border-radius: 30px;
+    border: none;
+    font-family: var(--font-family);
+    font-size: 20px;
+}
+.rb__chat-body input:placeholder-shown{
+    font-size: 20px;
+    
+}
+.rb_chat-body_input-box button{
+    background: #FF5480;
+}
+
+@media screen and (max-width: 1050px){
+    .display{
+        display: contents;
+    }
+    .rb__chat{
+        padding: 0 80px;
+     
+        border-radius:10px;
+    }
+    .rb__chat-body{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50px;
+        height: 80ch;
+        min-height: 85ch;
+        /* border: 2px solid black; */
+        flex: 1 1 70%;
+        background: #fff1f1;
+        border-radius: 10px;
+    }
+    .rb__chat-section{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        border: 5px solid #FFFFFF;
+        height: 35em;
+    }
+    .right{
+
+        position: absolute;
+        right: 140px;
+        top: 650px;
+        border: 3px solid green;
+    }
+   
+
+    
+}
+
+@media screen and (max-width: 500px){
+    .rb__chat{
+        padding: 0 40px;
+    }
+}
+
+
+
+
+.messages-wrapper {
+    padding: 30px;
+    margin-bottom: 60px;
+  }
+  .chat-bubble {
+    border-radius: 20px 20px 20px 0;
+    padding: 15px;
+    background-color: #7cc5d9;
+    color: #1c2c4c;
+    width: max-content;
+    max-width: calc(100% - 50px);
+    box-shadow: -2px 2px 1px 1px #4c768d;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .chat-bubble.right {
+    margin-left: auto;
+    border-radius: 20px 20px 0 20px;
+    background-color: #fff;
+    box-shadow: -2px 2px 1px 1px #88dded;
+  }
+  .chat-bubble__left {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #1c2c4c;
+  }
+  .user-message {
+    word-break: break-all;
+  }
+  .message-time {
+    display: block;
+    text-align: right;
+  }
+  
+  /* send message */
+  .send-message {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #4c768d;
+    display: flex;
+  }
+  .send-message > input {
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    flex-grow: 1;
+    background-color: white;
+    color: #1c2c4c;
+    font-size: 1rem;
+  }
+  .send-message > input:placeholder {
+    color: #ddd;
+  }
+  .send-message > :is(input, button):focus {
+    outline: none;
+    border-bottom: 1px solid #7cc5d9;
+  }
+  .send-message > button {
+    width: 70px;
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    color: #242443;
+    border: 1px solid #7cc5d9;
+    background-color: #7cc5d9;
+    font-weight: 600;
+  }
+
+  import React, { useEffect, useRef, useState } from "react";
+import {
+  query,
+  collection,
+  orderBy,
+  onSnapshot,
+  limit,
+  serverTimestamp,
+  addDoc,
+  where,
+  getDocs,
+  doc
+} from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+import { useUserAuth } from "../../context/UserAuthContext";
+import "./chat.css";
+import dummy from "../../assets/blank-profile-picture-g0e62e6b69_1280.png";
+import { IoMdSend, IoMdArrowDropup, IoMdClose } from "react-icons/io";
+
+const Chat = () => {
+  const [messages, setMessages] = useState([]);
+  const scroll = useRef();
+  const { user } = useUserAuth();
+  const [groupList, setGroupList] = useState([]);
+  const [selectGroup, setSelectGroup] = useState("");
+
+  useEffect(() => {
+    console.log(groupList);
+    const q = query(
+      collection(db, "messages"),
+      orderBy("createdAt"),
+      limit(50)
+    );
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+      let messages = [];
+      QuerySnapshot.forEach((doc) => {
+        messages.push({ ...doc.data(), id: doc.id });
+      });
+      setMessages(messages);
+    });
+
+    return () => unsubscribe;
+   
+  }, [groupList]);
+
+
+  return (
+    <main className="chat-box">
+      {groupList?.map((item, index) => {
+        return (
+          <div key={index}>
+            <button onClick={() => setSelectGroup(item)}> {item}</button>
+          </div>
+        );
+      })}
+
+      <div className="messages-wrapper">
+        {messages?.map((message) => (
+          <Message key={message.id} message={message} />
+        ))}
+      </div>
+      
+      <span ref={scroll}></span>
+      <SendMessage scroll={scroll} />
+    </main>
+  );
+};
+
+export default Chat;
+
+
+
+
+
+export const SendMessage = ({ scroll }) => {
+  const [message, setMessage] = useState("");
+  const { user } = useUserAuth();
+  const [load, setLoad] = useState(false);
+  const { email, displayName, photoURL } = user;
+
+  const sendMessage = async (event) => {
+    event.preventDefault();
+    if (message.trim() === "") {
+      alert("Enter valid message");
+      return;
+    }
+
+    await addDoc(collection(db, "messages"), {
+      text: message,
+      name: displayName,
+      avatar: photoURL,
+      createdAt: serverTimestamp(),
+      email,
+    });
+    setMessage("");
+    scroll.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <div className="send-message">
+        <label htmlFor="messageInput" hidden>
+          Enter Message
+        </label>
+        <input
+          id="messageInput"
+          name="messageInput"
+          type="text"
+          className="form-input__input"
+          placeholder="type message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <button onClick={(event) => sendMessage(event)}>
+          <IoMdSend size={40} />
+        </button>
+      </div>
+    </>
+  );
+};
+
+
+
+export const Message = ({ message }) => {
+  const { user } = useUserAuth();
+  return (
+    <div
+      className={`chat-bubble ${message.email === user.email ? "right" : ""}`}
+    >
+      <img
+        className="chat-bubble__left"
+        src={message.avatar === null ? dummy : message.avatar}
+        alt="user avatar"
+      />
+      <div className="chat-bubble__right">
+        <p className="user-name">{message.name}</p>
+        <p className="user-message">{message.text}</p>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+.chat-box{
+  padding: 0 10px;
+  border-radius:10px;
+  max-height: 70vh;
+  border: 5px solid #FFFFFF;
+  margin: 0 100px;
+  font-family: var(--font-family);
+
+}
+
+
+.messages-wrapper {
+  padding: 30px;
+}
+.chat-bubble {
+  border-radius: 20px 20px 20px 0;
+  padding: 15px;
+  background-color: #FF5480;
+  color: white;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  box-shadow: -2px 2px 1px 1px rgb(147, 146, 146);
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.chat-bubble.right {
+  margin-left: auto;
+  border-radius: 20px 20px 0 20px;
+  background-color: #fff;
+  color: black;
+  box-shadow: -2px 2px 1px 1px #FF5480;
+}
+.chat-bubble__left {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #1c2c4c;
+}
+.user-message {
+  word-break: break-all;
+}
+.message-time {
+  display: block;
+  text-align: right;
+}
+
+/* send message */
+.send-message {
+  position: fixed;
+  bottom: 90px;
+  width: 80%;
+  padding: 20px 30px;
+  
+  display: flex;
+}
+.send-message > input {
+  height: 50px;
+  padding: 10px 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  flex-grow: 1;
+  background-color: white;
+  color: #1c2c4c;
+  font-size: 1rem;
+}
+.send-message > input:placeholder {
+  color: #ddd;
+}
+.send-message > :is(input, button):focus {
+  outline: none;
+  border-bottom: 1px solid #7cc5d9;
+}
+.send-message > button {
+  width: 70px;
+  height: 50px;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+  color: whitesmoke;
+  border: 1px solid #7cc5d9;
+  background-color: #9283E0;
+  font-weight: 600;
+}
+
+
+
+

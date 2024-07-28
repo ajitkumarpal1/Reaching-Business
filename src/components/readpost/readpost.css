@@ -1,0 +1,388 @@
+.rb__readpost {
+    width: 80vw;
+    height: 100%;
+    margin: 0 auto;
+}
+.divider{
+    border: 2px solid hotpink;
+    height: 100%;
+}
+
+.rb__readpost-header {
+    height: 35vh;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 34px;
+    font-family: var(--font-family);
+}
+
+.rb__readpost-header_container {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.rb__readpost-header_container p {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.rb__readpost-header_container-author {
+    display: flex;
+    margin-top: 15px;
+    font-size: 22px;
+    align-items: baseline;
+}
+
+.rb__readpost-header_container-author h4 {
+    font-weight: 400;
+}
+
+.rb__readpost-header_container-author p {
+    margin-right: 5px;
+    color: #9B9B9B;
+}
+
+.rb__readpost-content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb__readpost-content_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rb__readpost-content_container-post {
+    font-family: var(--font-family);
+    align-content: center;
+    width: 60vw;
+}
+
+.rb__readpost-content_container-post img {
+    width: 60vw;
+    height: 40vh;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.rb__readpost-content_container-post p {
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.rb__readpost-content_container-buttons {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+    justify-content: center;
+}
+.rb__readpost-content_container-post-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+
+.rb__readpost-content_author-container {
+    width: 50vw;
+    margin: 40px auto 10px auto;
+    display: flex;
+    background: var(--color-box);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 34px;
+    font-family: var(--font-family);
+    align-items: center;
+}
+
+.rb__readpost-content_author-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.rb__readpost-content_author-container h4 {
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.rb__readpost-content_author-container_comment {
+    margin-top: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.rb__readpost-content_author-container_comment input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 2px 0 2px 10px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: black;
+    border: 1px solid #DE3C4B;
+}
+
+.rb__readpost-content_author-container_comment button {
+    width: 100px;
+    height: 40px;
+    background-color: #9283E0;
+    color: white;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 2px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1080px){
+    .rb__readpost {
+        width: 80vw;
+        height: 100%;
+    }
+    
+    .rb__readpost-header {
+        height: 50vh;
+        background: var(--color-box);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        flex-direction: column;
+        padding: 34px;
+        font-family: var(--font-family);
+    }
+    
+    .rb__readpost-header_container {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    
+    .rb__readpost-header_container p {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    
+    .rb__readpost-header_container-author {
+        display: flex;
+        margin-top: 15px;
+        font-size: 22px;
+        align-items: baseline;
+    }
+    
+    .rb__readpost-header_container-author h4 {
+        font-weight: 400;
+    }
+    
+    .rb__readpost-header_container-author p {
+        margin-right: 5px;
+        color: #9B9B9B;
+    }
+    
+    .rb__readpost-content {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .rb__readpost-content_container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .rb__readpost-content_container-post {
+        font-family: var(--font-family);
+        align-content: center;
+        width: 70vw;
+    }
+    
+    .rb__readpost-content_container-post img {
+        width: 70vw;
+        height: 40vh;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+    
+    .rb__readpost-content_container-post p {
+        text-align: justify;
+        margin-bottom: 5px;
+    }
+    
+    .rb__readpost-content_container-buttons {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-family);
+    }
+    
+    .rb__readpost-content_container-buttons_b1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .rb__readpost-content_container-buttons_b2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .rb__readpost-content_author-container {
+        margin-top: 40px;
+        display: flex;
+        background: var(--color-box);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        flex-direction: column;
+        padding: 34px;
+        font-family: var(--font-family);
+        align-items: center;
+    }
+    
+    .rb__readpost-content_author-container img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50px;
+    }
+    
+    .rb__readpost-content_author-container h4 {
+        margin-top: 5px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    
+    .rb__readpost-content_author-container_comment {
+        margin-top: 10px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    
+    }
+    
+    .rb__readpost-content_author-container_comment input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 40px;
+        padding: 2px 0 2px 10px;
+        font-family: var(--font-family);
+        font-weight: 600px;
+        font-weight: 400;
+        font-size: 18px;
+        border-radius: 25px;
+        border-style: none;
+        color: black;
+        border: 1px solid #DE3C4B;
+    }
+    
+    .rb__readpost-content_author-container_comment button {
+        width: 100px;
+        height: 40px;
+        background-color: #9283E0;
+        color: white;
+        border: none;
+        margin: 0 0 0 0;
+        padding: 2px 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        cursor: pointer;
+        font-family: var(--font-family);
+        font-size: 25px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .rb__readpost {
+        width: 77vw;
+        height: 100%;
+    }
+
+    .rb__readpost-header {
+        height: 50vh;
+        padding: 1px auto;
+    }
+    .rb__readpost-content_author-container {
+        width: 80vw;
+        margin-left: 0;
+    }
+
+    .rb__readpost-content_author-container_comment {
+        padding: 10px 20px;
+    }
+
+    .rb__readpost-content_container-buttons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .rb__readpost {
+        width: 95vw;
+        height: 100%;
+    }
+
+    .rb__readpost-header {
+        height: 55vh;
+        padding: 1px auto;
+    }
+
+    .rb__readpost-content_container-post {
+        font-family: var(--font-family);
+        align-content: center;
+        width: 90vw;
+    }
+    .rb__readpost-content_container-post img{
+        width: 100%;
+    }
+
+    .rb__readpost-content_container-buttons {
+        display: none;
+    }
+    .rb__readpost-content_author-container {
+        width: 90vw;
+        margin-left: 0;
+        padding: 40px;
+    }
+    .rb__readpost-content_author-container_comment {
+       padding: 0 90px;
+    }
+}
+@media screen and (max-width: 400px) {
+
+    .rb__readpost {
+        width: 95vw;
+        height: 100%;
+    }
+
+    .rb__readpost-header {
+        height: 65vh;
+        padding: 1px auto;
+    }
+
+    .rb__readpost-content_container-buttons {
+        display: none;
+    }
+    .rb__readpost-content_author-container_comment {
+       padding: 0 90px;
+    }
+}

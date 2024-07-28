@@ -1,0 +1,105 @@
+.rb__login {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.rb__login-image {
+    width: 1000px;
+    height: 700px;
+
+}
+
+.rb__login-image img {
+    width: fit-content;
+    height: 1000px;
+    object-fit: contain;
+}
+
+.rb__login-form_container {
+    position: relative;
+    margin-top: 250px;
+    margin-left: 200px;
+    width: 500px;
+    background: var(--color-box);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 10px 5px black;
+    font-family: var(--font-family);
+    font-weight: 600;
+    border-radius: 7px;
+}
+
+.rb__login-form_container h1 {
+    margin: 10px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.rb__login-form_container input {
+    font-size: 20px;
+
+    width: 400px;
+    margin: 12px;
+    padding: 17px 0 21px 45px;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: 2px 2px 5px #9B9B9B;
+}
+.rb__login-form_container-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.rb__login-form_container-buttons button {
+    margin: 15px 5px 13px 5px;
+    padding: 14px 40px;
+    font-family: var(--font-family);
+    font-weight: 600px;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #FF5480;
+    cursor: pointer;
+}
+.rb__login-forgotpass_container{
+    margin: 30px 0;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 25px;
+}
+.rb__login-forgotpass_container a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+    .rb__login-image {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .rb__login-image {
+        display: none;
+    }
+    .rb__login-form_container {
+        margin-left: 30px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .rb__login-image {
+        display: none;
+    }
+    .rb__login-form_container {
+        margin-left: 10px;
+        width: 350px;
+    }
+    .rb__login-form_container input {
+        width: 300px;
+        margin: 12px;
+    }
+}
