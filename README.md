@@ -26,9 +26,10 @@ You might think this is an e-commerce website but believe me it is not, It is so
   
 
 
-### 🏠 [Homepage]
-      [image](https://user-images.githubusercontent.com/38005544/227711966-2d7e3f9b-662e-4673-8329-5861138251aa.png)
-      [image](https://user-images.githubusercontent.com/38005544/227712166-6bfe0eba-87a8-494a-9d59-b177b7906e11.png)
+### 🏠 [Homepage](https://user-images.githubusercontent.com/38005544/227711966-2d7e3f9b-662e-4673-8329-5861138251aa.png)
+![image](https://user-images.githubusercontent.com/38005544/227711966-2d7e3f9b-662e-4673-8329-5861138251aa.png)
+![image](https://user-images.githubusercontent.com/38005544/227712166-6bfe0eba-87a8-494a-9d59-b177b7906e11.png)
+
 
 
 
