@@ -51,7 +51,7 @@ npm run start
 
 👤 **Ajit kumar pal**
  
-* Github: [@girishbari](https://github.com/ajitkumarpal1)
+* Github: [@Ajit](https://github.com/ajitkumarpal1)
 
 
 ***
